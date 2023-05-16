@@ -18,31 +18,85 @@ Remove the null values from the data
 ## STEP 4
 Save the Clean data to the file
 
-# CODE
+Name :Saileshkumar A
+
+Register Number : 212222230126
+
 import pandas as pd
-df=pd.read_csv("/content/Loan_data.csv")
+
+df=pd.read_csv("/content/Loan_data (1).csv")
+
 print(df)
 
-df.head(5)
+df.head(10)
 
-df.tail(5)
+df.info()
 
-df.describe()
+df.isnull()
+
+df.isnull().sum()
+
+df['Loan_ID']=df['Loan_ID'].fillna(df['Dependents'].mode()[0])
+
+df['Dependents']=df['Dependents'].fillna(df['Dependents'].mode()[0])
+
+df['Education']=df['Education'].fillna(df['Dependents'].mode()[0])
+
+df['Self_Employed']=df['Self_Employed'].fillna(df['Self_Employed'].mode()[0])
+
+df['Gender']=df['Gender'].fillna(df['Gender'].mode()[0])
+
+df.head()
+
+df['ApplicantIncome']=df['ApplicantIncome'].fillna(df['ApplicantIncome'].mean())
+
+df['Loan_Amount_Term']=df['Loan_Amount_Term'].fillna(df['Loan_Amount_Term'].mean())
+
+df['LoanAmount']=df['LoanAmount'].fillna(df['LoanAmount'].mean())
+
+df.head()
+
+df['Credit_History']=df['Credit_History'].fillna(df['Credit_History'].median())
+
+df.head()
 
 df.info()
 
 df.isnull().sum()
 
-df=df[~df.duplicated()]
-print(df)
-
-df['Gender'].fillna(value=df['Gender'].mode())
-
-df['LoanAmount'].fillna(value=df['LoanAmount'].median())
 # OUPUT
 
-![226175971-feb08341-5c1e-45a2-8d57-66bc1bce8981](https://user-images.githubusercontent.com/113497410/228141861-b491420f-61d3-4e20-8a67-ebd5b3e3b275.png)
-![226176000-ea5c964c-6c16-4bbd-8839-67d57d618635](https://user-images.githubusercontent.com/113497410/228141865-541cd7da-7768-4e04-a1b3-0fa1bcad8413.png)
-![226176067-66d59b15-bc04-4ee4-95ef-d8d44dfef950](https://user-images.githubusercontent.com/113497410/228141863-ccd81b1c-7b38-4076-b0dd-07157648caef.png)
-![226176220-22300b8c-27b7-49d5-9cf6-91ee68472052](https://user-images.githubusercontent.com/113497410/228141864-06c146f9-763d-44de-9361-928add902e82.png)
-![Data](https://user-images.githubusercontent.com/113497410/228141862-368cdd8d-285b-43a0-8327-18b8185c7faa.png)
+![image](https://github.com/SAILESHKUMAR33/Ex-01-Data-Cleaning/assets/113497410/15964a90-8a74-45f6-ab3f-7135f21a9738)
+
+# df.info:
+
+![image](https://github.com/SAILESHKUMAR33/Ex-01-Data-Cleaning/assets/113497410/04b4870e-1250-4e12-aff0-92467bbdfd22)
+
+# MODE:
+
+![image](https://github.com/SAILESHKUMAR33/Ex-01-Data-Cleaning/assets/113497410/2485f187-80aa-4b82-9dd0-517e5570a542)
+
+
+# MEAN:
+
+![image](https://github.com/SAILESHKUMAR33/Ex-01-Data-Cleaning/assets/113497410/11a7600b-519f-47c7-a2a3-0a5951e3b225)
+
+# MEDIAN:
+
+![image](https://github.com/SAILESHKUMAR33/Ex-01-Data-Cleaning/assets/113497410/6b3ea824-d6f4-4528-a22d-5f8b9f9058d4)
+
+
+# df.info:
+
+![image](https://github.com/SAILESHKUMAR33/Ex-01-Data-Cleaning/assets/113497410/fe83fc6c-ac1f-46ec-bcaa-0607e46243bc)
+
+# df.isnull().sum():
+
+
+![image](https://github.com/SAILESHKUMAR33/Ex-01-Data-Cleaning/assets/113497410/6fe17083-fdcf-47e6-a9a6-b318dea8e59d)
+
+
+# RESULT:
+
+Thus,the given data is read,cleansed and the cleaned data is saved into the file.
+
